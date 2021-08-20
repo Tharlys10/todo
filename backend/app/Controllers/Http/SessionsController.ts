@@ -1,5 +1,5 @@
 import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
-import { AuthenticationUserUseCase } from 'App/useCase/User/authenticationUser/AuthenticationUserUseCase';
+import { AuthenticationUserUseCase } from 'App/UseCase/User/authenticationUser/AuthenticationUserUseCase';
 import { IUserResponseDTO } from '../../DTOs/IUserResponseDTO';
 
 

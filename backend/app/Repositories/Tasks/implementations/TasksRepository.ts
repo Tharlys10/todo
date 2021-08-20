@@ -10,6 +10,12 @@ class TasksRepository implements ITasksRepository {
     return tasks;
   }
 
+  async findById(id: string): Promise<Task | null> {
+    const task = await Task.find(id);
+
+    return task;
+  }
+
   async findByIdUser(user_id: string): Promise<Task[]> {
     const tasks = await Task.query().where({ user_id })
 
@@ -27,14 +33,20 @@ class TasksRepository implements ITasksRepository {
   }
 
   async updateStatus(id: string, status: boolean): Promise<Task> {
-    const task = await Task.create({
-      id,
-      finished: status
-    })
+    const task = await Task.findOrFail(id)
+
+    task.finished = status;
+
+    await task.save()
 
     return task;
   }
 
+  async delete(id: string): Promise<void> {
+    const task = await Task.findOrFail(id);
+
+    await task.delete()
+  }
 }
 
 export { TasksRepository }

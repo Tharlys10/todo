@@ -29,4 +29,11 @@ Route.group(() => {
   Route.post('/', 'UsersController.create')
 }).prefix('/users')
 
+Route.group(() => {
+  Route.get('/user/:id', 'TasksController.findByUser')
+  Route.post('/', 'TasksController.create')
+  Route.put('/:id', 'TasksController.updateStatus')
+  Route.delete('/:id', 'TasksController.delete')
+}).prefix('/tasks')
+
 

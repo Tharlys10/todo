@@ -19,7 +19,7 @@ export default class Task extends BaseModel {
   @column()
   public description: string
 
-  @column.arguments({ default: false })
+  @column()
   public finished: boolean
 
   @column.dateTime({ autoCreate: true })

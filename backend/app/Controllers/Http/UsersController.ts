@@ -2,8 +2,8 @@ import { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
 import { ICreateUserDTO } from 'App/DTOs/ICreateUserDTO';
 import { IUserResponseDTO } from 'App/DTOs/IUserResponseDTO';
 
-import { CreateUserUseCase } from 'App/useCase/User/createUser/CreateUserUseCase';
-import { FindUserByIdUseCase } from 'App/useCase/User/findUserById/findUserByIdUseCase';
+import { CreateUserUseCase } from 'App/UseCase/User/createUser/CreateUserUseCase';
+import { FindUserByIdUseCase } from 'App/UseCase/User/findUserById/findUserByIdUseCase';
 
 export default class UsersController {
   public async index({ request }: HttpContextContract): Promise<IUserResponseDTO> {
