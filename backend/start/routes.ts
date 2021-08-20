@@ -20,6 +20,13 @@
 
 import Route from '@ioc:Adonis/Core/Route'
 
-Route.get('/', async () => {
-  return { hello: 'world' }
-})
+Route.group(() => {
+  Route.post('/', 'SessionsController.create')
+}).prefix('/session')
+
+Route.group(() => {
+  Route.get('/:id', 'UsersController.index')
+  Route.post('/', 'UsersController.create')
+}).prefix('/users')
+
+
