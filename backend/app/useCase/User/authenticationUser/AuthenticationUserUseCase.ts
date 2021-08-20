@@ -1,6 +1,5 @@
 import { sign } from "jsonwebtoken";
 import { compare } from "bcrypt";
-import User from "App/Models/User";
 import { UsersRepository } from "App/Repositories/Users/implementations/UsersRepository";
 import { UserMap } from "App/Mapper/UserMap";
 import { IUserResponseDTO } from "App/DTOs/IUserResponseDTO";

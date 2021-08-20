@@ -16,10 +16,10 @@ export default class User extends BaseModel {
   public password: string
 
   @column.dateTime({ autoCreate: true })
-  public createdAt: DateTime
+  public created_at: DateTime
 
   @column.dateTime({ autoCreate: true, autoUpdate: true })
-  public updatedAt: DateTime
+  public updated_at: DateTime
 
   @beforeCreate()
   public static async createUUID(model: User) {
